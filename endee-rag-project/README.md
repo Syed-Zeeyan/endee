@@ -38,11 +38,12 @@ This project solves these challenges by implementing a complete RAG pipeline usi
 
 ```mermaid
 graph TD
-    User([User Query]) -->|Embedding| QueryEmb[Query Embedding (MiniLM)]
-    QueryEmb -->|Search| Endee[(Endee Vector Database)]
-    Endee -->|Semantic Similarity| TopK[Top-K Relevant Chunks]
-    TopK -->|Use Context| Response[Context-based Response]
+    A[User Query] -->|Create Embedding| B[Query Embedding MiniLM]
+    B -->|Vector Search| C[Endee Vector Database]
+    C -->|Similarity Match| D[Top K Relevant Chunks]
+    D -->|Provide Context| E[Context Based Response]
 ```
+
 
 ## 🛠️ How Endee is Used
 
@@ -182,3 +183,4 @@ It shows the ability to build production-style AI systems using open-source tool
 Backend & AI Engineering Candidate
 
 This project was built as part of the **Endee Labs internship evaluation** to demonstrate real-world vector database and RAG system implementation.
+
